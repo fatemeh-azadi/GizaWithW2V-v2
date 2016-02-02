@@ -1,0 +1,15 @@
+Additional Parameters:
+
+	-W2V_S source-word2vec-binary-file
+	-W2V_T target-word2vec-binary-file
+	-tmat translation-matrix-file (if word vectors are trained by Bilbowa, this parameter should not be given)
+
+	-w2vMethod 0|1|2 (0 = simple Giza without word2vec, 1 = just count similar words according to w2v n-best in IBM-1, 
+				2 = use linear combination of w2v and models probabilities after each EM iteration)
+	
+	method=1 Parameters:
+	-nw2v 1000 (number of similar words considered for each source word)
+
+	method=2 Parameters:
+	-lw2v 0.5 (weight of the w2v probabilities when combined with giza probabilities)
+	-lfw2v 1 (after each iteration lw2v will be multiplied by lfw2v)
